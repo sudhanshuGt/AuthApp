@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OnBoarding"
+    android:background="@drawable/screen_bg">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/onboarding"
+        android:id="@+id/onBoardingImg"
+        android:layout_marginTop="50dp">
+    </ImageView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:paddingHorizontal="20dp"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/OnBoardingCTA">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Let's Get Started"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:transitionName="titleTransition"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="Welcome to the future"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white">
+        </TextView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:backgroundTint="@color/button_color"
+                    android:paddingHorizontal="40dp"
+                    android:text="Signup"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="20dp"
+                    app:cornerRadius="20dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="14sp"
+                    android:transitionName="BtnTransition"
+                    android:id="@+id/SignUp"></com.google.android.material.button.MaterialButton>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/Login"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:backgroundTint="@color/button_color"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingHorizontal="40dp"
+                    android:text="Login"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:transitionName="BtnTransition"
+                    app:cornerRadius="20dp"></com.google.android.material.button.MaterialButton>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
