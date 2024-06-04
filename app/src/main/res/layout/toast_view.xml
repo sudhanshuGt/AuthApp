@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:layout_margin="10dp"
+    android:elevation="1dp"
+    android:background="@drawable/input_box_bg"
+    android:id="@+id/toastLayout">
+
+    <TextView
+        android:id="@+id/toastMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="toast message"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        android:layout_centerInParent="true">
+    </TextView>
+
+</RelativeLayout>

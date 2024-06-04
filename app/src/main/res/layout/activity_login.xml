@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
+    tools:context=".presentation.view.Login"
     android:background="@drawable/screen_bg">
 
     <LinearLayout
@@ -82,9 +82,8 @@
                         android:textColor="@color/white"
                         android:layout_marginRight="20dp"
                         app:cornerRadius="20dp"
-                        android:onClick="goToSignUp"
                         android:fontFamily="@font/poppins_bold"
-                        android:textSize="14sp"
+                        android:textSize="12sp"
                         android:transitionName="BtnTransition"
                         android:id="@+id/SignUp"></com.google.android.material.button.MaterialButton>
 
@@ -103,11 +102,10 @@
                         android:layout_marginLeft="20dp"
                         android:backgroundTint="@color/button_color"
                         android:fontFamily="@font/poppins_bold"
-                        android:onClick="goToLogin"
                         android:paddingHorizontal="40dp"
                         android:text="Google"
                         android:textColor="@color/white"
-                        android:textSize="14sp"
+                        android:textSize="12sp"
                         android:transitionName="BtnTransition"
                         app:cornerRadius="20dp"></com.google.android.material.button.MaterialButton>
 
@@ -128,7 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text="Email"
+                    android:text="User name"
                     android:textSize="16sp"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/white">
@@ -140,14 +138,24 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/input_box_bg">
 
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/m_m"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/u_ic">
+                    </ImageView>
+
                     <EditText
-                        android:id="@+id/email"
+                        android:id="@+id/userName"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:hint="Enter your email"
+                        android:hint="Choose your user name"
                         android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:inputType="textEmailAddress"
+                        android:layout_toRightOf="@id/u_ic"
                         android:background="@drawable/input_box_bg"
                         android:layout_marginHorizontal="15dp"
                         android:textSize="14sp">
@@ -165,21 +173,44 @@
 
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
-                    android:text="Password"
-                    android:textSize="16sp"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/white">
-                </TextView>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Password"
+                        android:textSize="16sp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/white">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/passwordStrength"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="16sp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/white">
+                    </TextView>
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/input_box_bg">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/lock"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/p_ic">
+                    </ImageView>
 
                     <EditText
                         android:id="@+id/password"
@@ -189,6 +220,7 @@
                         android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:inputType="textPassword"
+                        android:layout_toRightOf="@id/p_ic"
                         android:background="@drawable/input_box_bg"
                         android:layout_marginHorizontal="15dp"
                         android:textSize="14sp">
@@ -228,5 +260,17 @@
     </ScrollView>
 
 
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:indeterminateTint="@color/white"
+        android:visibility="gone"
+        android:id="@+id/loader">
+    </ProgressBar>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

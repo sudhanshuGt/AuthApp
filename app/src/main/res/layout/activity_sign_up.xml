@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp"
+    tools:context=".presentation.view.SignUp"
     android:background="@drawable/screen_bg">
 
     <LinearLayout
@@ -61,45 +61,7 @@
             </TextView>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="30dp">
 
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
-                    android:text="Name"
-                    android:textSize="16sp"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/white">
-                </TextView>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/input_box_bg">
-
-                    <EditText
-                        android:id="@+id/name"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:hint="Enter your name"
-                        android:textColor="@color/white"
-                        android:inputType="text"
-                        android:textColorHint="@color/white"
-                        android:background="@drawable/input_box_bg"
-                        android:layout_marginHorizontal="15dp"
-                        android:textSize="14sp">
-                    </EditText>
-
-                </RelativeLayout>
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -112,7 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text="Email"
+                    android:text="User name"
                     android:textSize="16sp"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/white">
@@ -124,14 +86,24 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/input_box_bg">
 
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/m_m"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/u_ic">
+                    </ImageView>
+
                     <EditText
-                        android:id="@+id/email"
+                        android:id="@+id/userName"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:hint="Enter your email"
+                        android:hint="Choose your user name"
                         android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:inputType="textEmailAddress"
+                        android:layout_toRightOf="@id/u_ic"
                         android:background="@drawable/input_box_bg"
                         android:layout_marginHorizontal="15dp"
                         android:textSize="14sp">
@@ -179,6 +151,15 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/input_box_bg">
 
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/lock"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/p_ic">
+                    </ImageView>
+
                     <EditText
                         android:id="@+id/password"
                         android:layout_width="match_parent"
@@ -187,6 +168,7 @@
                         android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:inputType="textPassword"
+                        android:layout_toRightOf="@id/p_ic"
                         android:background="@drawable/input_box_bg"
                         android:layout_marginHorizontal="15dp"
                         android:textSize="14sp">
@@ -218,6 +200,16 @@
         </LinearLayout>
     </ScrollView>
 
-
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:indeterminateTint="@color/white"
+        android:visibility="gone"
+        android:id="@+id/loader">
+    </ProgressBar>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

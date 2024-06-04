@@ -1,4 +1,4 @@
-package com.app.d2vassigment
+package com.app.d2vassigment.presentation.view
 
 import android.app.ActivityOptions
 import android.content.Intent
@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.app.d2vassigment.databinding.ActivityOnboardingBinding
-import com.bumptech.glide.Glide
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class OnBoarding : AppCompatActivity() {
 
     private lateinit var binding : ActivityOnboardingBinding
