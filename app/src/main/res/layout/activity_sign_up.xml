@@ -157,7 +157,7 @@
                         android:src="@drawable/lock"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
-                        android:id="@+id/p_ic">
+                        android:id="@+id/p1_ic">
                     </ImageView>
 
                     <EditText
@@ -168,16 +168,94 @@
                         android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:inputType="textPassword"
-                        android:layout_toRightOf="@id/p_ic"
+                        android:layout_toRightOf="@id/p1_ic"
+                        android:layout_toLeftOf="@id/p_toggle1"
                         android:background="@drawable/input_box_bg"
                         android:layout_marginHorizontal="15dp"
                         android:textSize="14sp">
                     </EditText>
 
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/show_p"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/p_toggle1">
+                    </ImageView>
+
                 </RelativeLayout>
 
             </LinearLayout>
 
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp">
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Re Enter Password"
+                        android:textSize="16sp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/white">
+                    </TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/input_box_bg">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/lock"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/p_ic">
+                    </ImageView>
+
+                    <EditText
+                        android:id="@+id/passwordConfirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Enter your password again"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:inputType="textPassword"
+                        android:layout_toRightOf="@id/p_ic"
+                        android:layout_toLeftOf="@id/p_toggle2"
+                        android:background="@drawable/input_box_bg"
+                        android:layout_marginHorizontal="15dp"
+                        android:textSize="14sp">
+                    </EditText>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/show_p"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/p_toggle2">
+                    </ImageView>
+
+                </RelativeLayout>
+
+            </LinearLayout>
 
 
 

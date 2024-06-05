@@ -3,9 +3,12 @@ package com.app.d2vassigment.presentation.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
+import android.text.InputType
 import android.text.TextWatcher
 import android.util.Patterns
 import android.view.View
+import android.widget.EditText
+import android.widget.ImageView
 import androidx.activity.viewModels
 import com.app.d2vassigment.R
 import com.app.d2vassigment.databinding.ActivitySignUpBinding
@@ -114,6 +117,18 @@ class SignUp : AppCompatActivity() {
             binding.password.requestFocus()
             binding.password.error = "Very small password"
             return
+        }else if (binding.passwordConfirm.text.trim().isEmpty()) {
+            binding.passwordConfirm.requestFocus()
+            binding.passwordConfirm.error = "Please enter your password"
+            return
+        }else if (binding.passwordConfirm.text.trim().length < 4){
+            binding.passwordConfirm.requestFocus()
+            binding.passwordConfirm.error = "Very small password"
+            return
+        }else if(binding.password.text.trim().toString() != binding.passwordConfirm.text.trim().toString()){
+            binding.passwordConfirm.requestFocus()
+            binding.passwordConfirm.error = "Password doesn't matched"
+            return
         }else{
             // user model for registration
             val user = UserModel(
@@ -132,6 +147,15 @@ class SignUp : AppCompatActivity() {
                     is UserViewState.Error -> showError(state.message)
                 }
             }
+        }
+
+
+        binding.pToggle1.setOnClickListener {
+            togglePasswordVisibility(binding.password, binding.pToggle1)
+        }
+
+        binding.pToggle2.setOnClickListener {
+            togglePasswordVisibility(binding.passwordConfirm, binding.pToggle2)
         }
 
     }
@@ -190,6 +214,24 @@ class SignUp : AppCompatActivity() {
         return regex.matches(number)
     }
 
+
+    // function to toggle the password visibility
+    private fun togglePasswordVisibility(editText: EditText, toggle : ImageView) {
+        if (editText.inputType == InputType.TYPE_TEXT_VARIATION_PASSWORD ||
+            editText.inputType == (InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD)) {
+            // Changing to normal text for visibility
+            toggle.setImageResource(R.drawable.hide_p)
+            editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_NORMAL
+        } else {
+            // Changing to password
+            toggle.setImageResource(R.drawable.show_p)
+            editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+        }
+        // Moving the cursor to the end of the text
+        editText.setSelection(editText.text.length)
+    }
+
+    // enums for password strength status
     enum class PasswordStrength {
         WEAK,
         STRONG,

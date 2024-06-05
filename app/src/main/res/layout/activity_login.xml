@@ -77,7 +77,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:backgroundTint="@color/button_color"
-                        android:paddingHorizontal="40dp"
                         android:text="Facebook"
                         android:textColor="@color/white"
                         android:layout_marginRight="20dp"
@@ -102,7 +101,6 @@
                         android:layout_marginLeft="20dp"
                         android:backgroundTint="@color/button_color"
                         android:fontFamily="@font/poppins_bold"
-                        android:paddingHorizontal="40dp"
                         android:text="Google"
                         android:textColor="@color/white"
                         android:textSize="12sp"
@@ -185,16 +183,7 @@
                         android:layout_marginTop="10dp"
                         android:textColor="@color/white">
                     </TextView>
-                    <TextView
-                        android:id="@+id/passwordStrength"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins"
-                        android:textSize="16sp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginTop="10dp"
-                        android:textColor="@color/white">
-                    </TextView>
+
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -209,7 +198,7 @@
                         android:src="@drawable/lock"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
-                        android:id="@+id/p_ic">
+                        android:id="@+id/p1_ic">
                     </ImageView>
 
                     <EditText
@@ -220,11 +209,23 @@
                         android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:inputType="textPassword"
-                        android:layout_toRightOf="@id/p_ic"
+                        android:layout_toRightOf="@id/p1_ic"
+                        android:layout_toLeftOf="@id/p_toggle1"
                         android:background="@drawable/input_box_bg"
                         android:layout_marginHorizontal="15dp"
                         android:textSize="14sp">
                     </EditText>
+
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/show_p"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/p_toggle1">
+                    </ImageView>
 
                 </RelativeLayout>
 

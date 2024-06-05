@@ -3,9 +3,12 @@ package com.app.d2vassigment.presentation.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
+import android.text.InputType
 import android.text.TextWatcher
 import android.util.Patterns
 import android.view.View
+import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.app.d2vassigment.R
@@ -64,6 +67,11 @@ class Login : AppCompatActivity() {
 
         binding.Login.setOnClickListener {
             validateInput()
+        }
+
+
+        binding.pToggle1.setOnClickListener {
+            togglePasswordVisibility(binding.password, binding.pToggle1)
         }
     }
 
@@ -151,5 +159,21 @@ class Login : AppCompatActivity() {
         // Regular expression to match the mobile number
         val regex = Regex("^[9876]\\d{9}$")
         return regex.matches(number)
+    }
+
+    // function to toggle the password visibility
+    private fun togglePasswordVisibility(editText: EditText, toggle : ImageView) {
+        if (editText.inputType == InputType.TYPE_TEXT_VARIATION_PASSWORD ||
+            editText.inputType == (InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD)) {
+            // Changing to normal text for visibility
+            toggle.setImageResource(R.drawable.hide_p)
+            editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_NORMAL
+        } else {
+            // Changing to password
+            toggle.setImageResource(R.drawable.show_p)
+            editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+        }
+        // Moving the cursor to the end of the text
+        editText.setSelection(editText.text.length)
     }
 }
